@@ -35,7 +35,7 @@ canvas {
     bottom: 0;
     left: 0;
     right: 0;
-    background: url(/Projeto\ Web/imagens/12.png);
+    background: url(../imagens/12.png);
     
 }
 
@@ -54,7 +54,7 @@ canvas {
     height: 58px;
     margin-top: 12px;
     float: left;
-    background: url(/Projeto\ Web/imagens/logo.png) no-repeat;
+    background: url(../imagens/logo.png) no-repeat;
 } 
 
 /* Menu estilo: hamburguer */
@@ -178,5 +178,5 @@ li#m-h:hover {
 }
 
 body{
-    background-image: url(/Projeto\ Web/imagens/3.png);
+    background-image: url(../imagens/3.png);
 }
