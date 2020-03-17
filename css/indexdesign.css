@@ -1,7 +1,73 @@
 * {
     margin: 0px auto;
     padding: 0px;
+}
 
+.cabecalho {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    float: left;
+    background-color: #5DBCD2;
+    margin: 0 auto;
+}
+
+.menu {
+    width: 100%;
+    height: 80px;
+    background-color: #5DBCD2;
+    font-family: Arial, sans-serif;
+    font-size: 15pt;
+    margin-left: 750px;
+}
+
+.logo a {
+    position: relative;
+    width: 242px;
+    height: 58px;
+    margin-top: 12px;
+    float: left;
+    background: url(../imagens/logo.png) no-repeat;
+
+}  
+
+.menu ul {
+    list-style: none;
+    position: relative;
+}
+
+.menu ul li {
+    width: 150px;
+    float: left;
+}
+
+.menu a {
+    padding: 26.5px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    background-color: #5DBCD2;
+    color: #ffffff;
+}
+
+.menu ul ul {
+    position: absolute;
+    visibility: hidden;
+}
+
+.menu ul li:hover ul {
+    visibility: visible;
+}
+
+.menu a:hover {
+    background-color: #ffffff;
+    color: #555555;
+    border-bottom: solid 4px #afa9a9;
+}
+
+.menu ul ul li {
+    float: none;
+    border-bottom: solid 1px #cccccc;
 }
 
 canvas {
@@ -39,135 +105,6 @@ canvas {
     
 }
 
-.cabecalho {
-    position: relative;
-    width: 100%;
-    height: 80px;
-    float: left;
-    background-color: #5DBCD2;
-    margin: 0 auto;
-}
-
-.logo a {
-    position: relative;
-    width: 242px;
-    height: 58px;
-    margin-top: 12px;
-    float: left;
-    background: url(../imagens/logo.png) no-repeat;
-} 
-
-/* Menu estilo: hamburguer */
-.menu {
-    /*background: rgb(77, 234, 240);*/
-    background: white;
-    border: 50%;
-    width: 60px;
-    height: 60px;
-    position: fixed;
-    top: 10px;
-    right: 25px;
-    cursor: pointer;
-    box-shadow: 0 0 0 0 white, 0 0 0 0 white;
-    transition: box-shadow .5s ease-in-out;
-}
-
-.menu:hover {
-    box-shadow: 0 0 0 4px white, 0 0 0 4px white;
-}
-
-.hamb {
-    position: relative;
-    display: block;
-    background: black;
-    width: 30px;
-    height: 2px;
-    top: 28px;
-    transition: .5s ease-in-out;
-}
-
-.hamb::before,
-.hamb::after {
-    background: black;
-    content: "";
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    transition: .5s ease-in-out;
-}
-
-.hamb::before {
-    top: -10px;
-}
-
-.hamb::after {
-    bottom: -10px;
-}
-
-input#menu-hamb {
-    display: none;
-}
-
-input#menu-hamb:checked ~ ul {
-    opacity: 1;
-}
-
-input#menu-hamb:checked ~ label .menu {
-    box-shadow: 0 0 0 18vw white, 0 0 0 10vh white;
-}
-
-input#menu-hamb:checked ~ label .hamb {
-    transform: rotate(45deg);
-}
-
-input#menu-hamb:checked ~ label .hamb::after {
-    transform: rotate(90deg);
-    bottom: 0;
-}
-
-input#menu-hamb:checked ~ label .hamb::before {
-    transform: rotate(90deg);
-    top: 0;
-}
-
-a#menu-hamb {
-    display: block;
-    margin-bottom: 10px;
-    color: black;
-    font-size: 40px;
-    text-decoration: none;
-}
-
-a#menu-hamb:hover {
-    color: white;
-}
-
-ul#m-h {
-    position: absolute;
-    top: 170px;
-    right: 0;
-    transform: translate(-50%, -50%);
-    list-style: none;
-    opacity: 0;
-    transition: .25s 1s ease-in-out;
-}
-
-li#m-h {
-    background-color: none;
-    padding: 6px;
-    margin-top: 3px;
-    transition: background-color .7s;
-}
-
-li#m-h:hover {
-    background-color: #5DBCD2;
-    transition: .5s;
-    color: white;
-}
-
-/* fim menu */
-
 #get {
     margin-top: 399px;
     position: absolute;
@@ -176,7 +113,6 @@ li#m-h:hover {
     left: 0;
     right: 0;
 }
-
 body{
     background-image: url(../imagens/3.png);
 }
