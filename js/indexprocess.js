@@ -2,14 +2,16 @@
 var canvas = document.documentElement;//o elemento canvas sobre o qual desenharemos
 var myCanvas = document.documentElement;
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
-var dx = 5;//a tava de variação (velocidade) horizontal do objeto
-var dy = 5;//a tava de variação (velocidade) vertical do objeto
+var dx = 50;//a tava de variação (velocidade) horizontal do objeto
+var dy = 50;//a tava de variação (velocidade) vertical do objeto
 var x = 250;//posição horizontal do objeto (com valor inicial)
 var y = 100;//posição vertical do objeto (com valor inicial)
 var WIDTH = 500;//largura da área retangular
 var HEIGHT = 200;//altura da área retangular
 var aqua = new Image();
 var fundoImg = new Image();
+var j;
+var v;
 aqua.src = '../imagens/aqua.png';
 
 function Desenhar() {
@@ -104,58 +106,23 @@ function get() {
         children[i].className = 'new-class'; //change child class name.
         ids.push(children[i].id); //get child id.
     }
-    var a = null;
-
-    for (let i = 0; i < children.length; i++) {
-        if (ids[i] == "img2") {
-            setTimeout(function () {
+        if (ids[j] == "img2") {
                 MoveRight();
-            }, 500);
-
-        } else if (ids[i] == "img3") {
-            //doSetTimeouRight();
-            setTimeout(function () {
+        } else if (ids[j] == "img3") {
                 MoveLeft();
-            }, 500);
-        }
-
-        //if (ids[i] == "img2" && i > 0) {
-        //  setTimeout(function() {
-        //    MoveRight();
-        //}, 1000)
-        // }
-        //if (ids[i] == "img3" && i > 0) {
-        //   setTimeout(function() {
-        //     MoveLeft();
-        //  }, 1000);
-        // }
-        /*
-        if (ids[i] == "img4" && i == 0) {
-            setTimeout(function() {
-                vazia();
-            }, 1000);
-            MoveUp();
-        }
-        if (ids[i] == "img4" && i > 0) {
-            setTimeout(function() {
+        } else if (ids[j] == "img4"){
                 MoveUp();
-            }, 1000);
-        }
-        if (ids[i] == "img5" && i == 0) {
-            setTimeout(function() {
-                vazia();
-            }, 1000);
-            MoveDown();
-        }
-        if (ids[i] == "img5" && i > 0) {
-            setTimeout(function() {
+        } else if(ids[j] == "img5"){
                 MoveDown();
-            }, 1000);
-        }*/
+        }
+        j++;
+        console.log("ta indo crl")
+}
 
-    }
-    ids = null;
-
+function interno(){
+    clearInterval(v);
+    j = 0;
+    v = setInterval(get, 1000);
 }
 window.addEventListener('keydown', KeyDown, true);
 Iniciar();
