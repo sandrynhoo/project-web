@@ -1,8 +1,15 @@
+
 * {
     margin: 0px auto;
     padding: 0px;
 }
-
+@font-face{
+    font-family: 'FonteLogo';
+    src: url(../fonts/sunday.otf);
+}
+.logo:link {text-decoration: none;color: white}
+.logo:active {text-decoration: none;}
+.logo:visited {text-decoration: none;color: white}
 .cabecalho {
     position: relative;
     width: 100%;
@@ -16,15 +23,16 @@
     position: relative;
     width: 242px;
     height: 58px;
-    margin-top: 12px;
+    margin-top: 6px;
     float: left;
-    background: url(../imagens/logo.png) no-repeat;
+    font-family: 'FonteLogo', sans-serif;
+    font-size: 40px;
+    color: white;
 }  
 
 .menu {
     float: right;
     margin-top: 15px;
-    width: 15%;
     height: 60px;
     background-color: #5DBCD2;
     font-family: Arial, sans-serif;
@@ -34,7 +42,6 @@
 .menu li {
     display: inline-block;
     list-style: none;
-    float: right;
     margin-top: 10px;
 }
 
