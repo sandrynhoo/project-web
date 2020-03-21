@@ -25,6 +25,8 @@
     height: 58px;
     margin-top: 6px;
     float: left;
+    left: 0;
+    right: 0;
     font-family: 'FonteLogo', sans-serif;
     font-size: 40px;
     color: white;
@@ -75,8 +77,8 @@ canvas {
     margin-top: 470px;
     position: absolute;
     display: block;
-    width: 200px;
-    height: 70px;
+    width: 250px;
+    height: 150px;
     top: 0;
     bottom: 0;
     left: 0;
