@@ -4,22 +4,40 @@ var myCanvas = document.documentElement;
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 var dx = 50;//a tava de variação (velocidade) horizontal do objeto
 var dy = 50;//a tava de variação (velocidade) vertical do objeto
-var x = 250;//posição horizontal do objeto (com valor inicial)
-var y = 100;//posição vertical do objeto (com valor inicial)
+var x = 255;//posição horizontal do objeto (com valor inicial)
+var y = 80;//posição vertical do objeto (com valor inicial)*/
 var WIDTH = 800;//largura da área retangular
 var HEIGHT = 400;//altura da área retangular
 var aqua = new Image();
 var fundoImg = new Image();
-var j;
-var v;
+var block = new Image();
+var blocks = {
+    block1: new Image(),
+    block2: new Image(),
+    block3: new Image(),
+    block4: new Image(),
+    block5: new Image(),
+    block6: new Image()
+};
 aqua.src = '../imagens/aqua.png';
-
+block.src = '../imagens/17.png';
+function retornoX(j) {
+    z = j;
+    return z;
+}
+function retornoY(k) {
+    u = k;
+    return u;
+}
+function DesenharBlock() {
+    ctx.drawImage(block, retornoX(252), retornoY(120));
+}
 function Desenhar() {
     ctx.drawImage(aqua, x, y);
 }
-function fundo(){
+function fundo() {
     fundoImg.src = '../imagens/11.png';
-    ctx.drawImage(fundoImg, 0, 0);  
+    ctx.drawImage(fundoImg, 0, 0);
 }
 function LimparTela() {
     ctx.beginPath();
@@ -77,8 +95,10 @@ function MoveRight() {
 
 function Atualizar() {
     LimparTela();
+    DesenharBlock();
     Desenhar();
-    
+
+
 }
 function Iniciar() {
     canvas = document.getElementById("canvas");
@@ -106,20 +126,20 @@ function get() {
         children[i].className = 'new-class'; //change child class name.
         ids.push(children[i].id); //get child id.
     }
-        if (ids[j] == "img2") {
-                MoveRight();
-        } else if (ids[j] == "img3") {
-                MoveLeft();
-        } else if (ids[j] == "img4"){
-                MoveUp();
-        } else if(ids[j] == "img5"){
-                MoveDown();
-        }
-        j++;
-        console.log("ta indo crl")
+    if (ids[j] == "img2") {
+        MoveRight();
+    } else if (ids[j] == "img3") {
+        MoveLeft();
+    } else if (ids[j] == "img4") {
+        MoveUp();
+    } else if (ids[j] == "img5") {
+        MoveDown();
+    }
+    j++;
+    console.log("ta indo crl")
 }
 
-function interno(){
+function interno() {
     clearInterval(v);
     j = 0;
     v = setInterval(get, 1000);
