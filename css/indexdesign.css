@@ -74,7 +74,7 @@ canvas {
 }
 
 #div1 {
-    margin-top: 470px;
+    margin-top: 630px;
     position: absolute;
     display: block;
     width: 250px;
@@ -86,9 +86,9 @@ canvas {
 }
 
 #div2 {
-    margin-top: 400px;
+    margin-top: 550px;
     position: absolute;
-    width: 499px;
+    width: 799px;
     height: 50px;
     top: 0;
     bottom: 0;
@@ -99,7 +99,7 @@ canvas {
 }
 
 #get {
-    margin-top: 399px;
+    margin-top: 550px;
     position: absolute;
     top: 0;
     bottom: 0;

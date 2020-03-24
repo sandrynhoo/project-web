@@ -6,8 +6,8 @@ var dx = 50;//a tava de variação (velocidade) horizontal do objeto
 var dy = 50;//a tava de variação (velocidade) vertical do objeto
 var x = 250;//posição horizontal do objeto (com valor inicial)
 var y = 100;//posição vertical do objeto (com valor inicial)
-var WIDTH = 500;//largura da área retangular
-var HEIGHT = 200;//altura da área retangular
+var WIDTH = 800;//largura da área retangular
+var HEIGHT = 400;//altura da área retangular
 var aqua = new Image();
 var fundoImg = new Image();
 var j;
