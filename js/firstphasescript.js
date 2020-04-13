@@ -97,8 +97,6 @@ function Atualizar() {
     LimparTela();
     DesenharBlock();
     Desenhar();
-
-
 }
 function Iniciar() {
     canvas = document.getElementById("canvas");
@@ -119,7 +117,7 @@ function drop(ev) {
 function allowDrop(ev) {
     ev.preventDefault();
 }
-function get() {
+function get(){
     var ids = [];
     var children = document.getElementById("div2").children; //get container element children.
     for (var i = 0, len = children.length; i < len; i++) {
@@ -136,13 +134,13 @@ function get() {
         MoveDown();
     }
     j++;
-    console.log("ta indo crl")
+    console.log("ta indo crl");
 }
 
 function interno() {
-    clearInterval(v);
     j = 0;
-    v = setInterval(get, 1000);
+    v = setInterval(get(), 1000);
+    clearInterval(v);
 }
 window.addEventListener('keydown', KeyDown, true);
 Iniciar();
