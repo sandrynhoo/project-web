@@ -2,10 +2,12 @@
 var canvas = document.documentElement;//o elemento canvas sobre o qual desenharemos
 var myCanvas = document.documentElement;
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
-var dx = 50;//a tava de variação (velocidade) horizontal do objeto
-var dy = 50;//a tava de variação (velocidade) vertical do objeto
-var x = 255;//posição horizontal do objeto (com valor inicial)
-var y = 80;//posição vertical do objeto (com valor inicial)
+var dx = 40;//a tava de variação (velocidade) horizontal do objeto
+var dy = 23;//a tava de variação (velocidade) vertical do objeto
+var dx1=36;
+var dy1=52;
+var x = 250;//posição horizontal do objeto (com valor inicial)
+var y = 92;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
 var HEIGHT = 400;//altura da área retangular
 var fundoImg = new Image();
@@ -68,22 +70,26 @@ function KeyDown(evt) {
 }
 function MoveUp() {
     if (y - dy > 0) {
-        y -= dy;
+        y -= dy1;
+        x+=dx1;
     }
 }
 function MoveDown() {
     if (y + dy < HEIGHT) {
-        y += dy;
+        y += dy1;
+        x-=dx1;
     }
 }
 function MoveLeft() {
     if (x - dx > 0) {
         x -= dx;
+        y-=dy;
     }
 }
 function MoveRight() {
     if (x + dx < WIDTH) {
         x += dx;
+        y+=dy;
     }
 }
 
