@@ -132,7 +132,13 @@ function get() {
                 MoveUp();
         } else if(ids[j] == "img5"){
                 MoveDown();
-        }
+        }else if (ids[j] == "img6") {
+            MoveRight();
+    } else if (ids[j] == "img7"){
+            MoveRight();
+    } else if(ids[j] == "img8"){
+            MoveDown();
+    }
         j++;
         console.log("ta indo crl")
 }
