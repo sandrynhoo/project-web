@@ -14,7 +14,7 @@ var block = new Image();
 var j;
 var v;
 aqua.src = '../imagens/aqua.png';
-block.src = '../imagens/cubo.png';
+block.src = '../imagens/17.png';
 function retornoX(j) {
     z = j;
     return z;
