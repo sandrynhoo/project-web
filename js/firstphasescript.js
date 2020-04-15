@@ -150,3 +150,17 @@ function interno(){
 }
 window.addEventListener('keydown', KeyDown, true);
 Iniciar();
+
+/* abrir e fechar pop-up */
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+function conf() {
+    alert("Procedimento concluído com êxito.")
+}

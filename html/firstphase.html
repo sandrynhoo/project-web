@@ -21,6 +21,23 @@
     <header class="cabecalho">
 
         <a href="index.html" title="TheCode" class="logo">THE CODE</a>
+
+        <button class="open-button-log" onclick="openForm()">LOGIN</button>
+        <button class="open-button-cad" onclick="openForm()">CADASTRO</button>
+
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
+
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Insira seu email" name="email" required>
+
+                <label for="psw"><b>Senha</b></label>
+                <input type="password" placeholder="Insira sua senha" name="psw" required>
+
+                <button type="submit" class="btn" onclick="conf()">Concluir</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+            </form>
+        </div>
        
     </header>
     <div>
