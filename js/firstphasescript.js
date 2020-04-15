@@ -5,16 +5,16 @@ var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 var dx = 50;//a tava de variação (velocidade) horizontal do objeto
 var dy = 50;//a tava de variação (velocidade) vertical do objeto
 var x = 255;//posição horizontal do objeto (com valor inicial)
-var y = 60;//posição vertical do objeto (com valor inicial)
+var y = 80;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
 var HEIGHT = 400;//altura da área retangular
-var aqua = new Image();
 var fundoImg = new Image();
 var block = new Image();
+var aqua = new Image();
 var j;
 var v;
-aqua.src = '../imagens/aqua.png';
 block.src = '../imagens/17.png';
+aqua.src = '../imagens/aqua.png';
 function retornoX(j) {
     z = j;
     return z;
@@ -89,8 +89,8 @@ function MoveRight() {
 
 function Atualizar() {
     LimparTela();
-    Desenhar();
     DesenharBlock();
+    Desenhar();
 }
 function Iniciar() {
     canvas = document.getElementById("canvas");

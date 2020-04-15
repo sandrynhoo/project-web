@@ -10,39 +10,39 @@
 </head>
 
 <body>
-   <header class="cabecalho">
-    <a href="index.html" title="TheCode" class="logo">THE CODE</a>
+    <header class="cabecalho">
 
-    <nav class="menu">
-        <ul>
-            <li><a href="#" class="bt-menu">Login</a></li>
-            <li><a href="#" class="bt-menu">Cadastro</a></li>
-        </ul>
-    </nav>
-      <div class="form-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
-            <h1>Login</h1>
+        <a href="index.html" title="TheCode" class="logo">THE CODE</a>
 
-            <label for="email"><b>E-mail</b></label>
-            <input type="text" placeholder="Digite seu email" name="email" required>
+        <button class="open-button-log" onclick="openForm()">LOGIN</button>
+        <button class="open-button-cad" onclick="openForm()">CADASTRO</button>
 
-            <label for="psw"><b>Senha</b></label>
-            <input type="password" placeholder="Digite sua senha" name="psw" required>
+        <div class="form-popup" id="myForm">
+            <form action="/action_page.php" class="form-container">
 
-            <button type="submit" class="btn">Login</button>
-            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Insira seu email" name="email" required>
+
+                <label for="psw"><b>Senha</b></label>
+                <input type="password" placeholder="Insira sua senha" name="psw" required>
+
+                <button type="submit" class="btn" onclick="conf()">Concluir</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Fechar</button>
+            </form>
+        </div>
+       
     </header>
-   <main>
+    <main>
         <div id="conteiner">
             <a href="firstphase.html"><button id="btnplay">PLAY</button></a>
             <a href="firstphase.html"><button id="btnimg">THE CODE</button></a>
             <a id="btnaqua" href="firstphase.html"></a>
         </div>
-   </main>
-   <footer>
-       <!--<p>fuck you bitch ! I´AM FUCK!</p>-->
-  </footer>
+    </main>
+    <footer>
+
+    </footer>
+    <script type="text/javascript" src="../js/indexprocess.js"></script>
 </body>
 
 </html>
