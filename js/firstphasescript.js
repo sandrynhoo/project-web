@@ -5,22 +5,16 @@ var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 var dx = 50;//a tava de variação (velocidade) horizontal do objeto
 var dy = 50;//a tava de variação (velocidade) vertical do objeto
 var x = 255;//posição horizontal do objeto (com valor inicial)
-var y = 80;//posição vertical do objeto (com valor inicial)*/
+var y = 60;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
 var HEIGHT = 400;//altura da área retangular
 var aqua = new Image();
 var fundoImg = new Image();
 var block = new Image();
-var blocks = {
-    block1: new Image(),
-    block2: new Image(),
-    block3: new Image(),
-    block4: new Image(),
-    block5: new Image(),
-    block6: new Image()
-};
+var j;
+var v;
 aqua.src = '../imagens/aqua.png';
-block.src = '../imagens/17.png';
+block.src = '../imagens/cubo.png';
 function retornoX(j) {
     z = j;
     return z;
@@ -35,9 +29,9 @@ function DesenharBlock() {
 function Desenhar() {
     ctx.drawImage(aqua, x, y);
 }
-function fundo() {
+function fundo(){
     fundoImg.src = '../imagens/11.png';
-    ctx.drawImage(fundoImg, 0, 0);
+    ctx.drawImage(fundoImg, 0, 0);  
 }
 function LimparTela() {
     ctx.beginPath();
@@ -95,8 +89,8 @@ function MoveRight() {
 
 function Atualizar() {
     LimparTela();
-    DesenharBlock();
     Desenhar();
+    DesenharBlock();
 }
 function Iniciar() {
     canvas = document.getElementById("canvas");
@@ -117,31 +111,30 @@ function drop(ev) {
 function allowDrop(ev) {
     ev.preventDefault();
 }
-function get(){
+function get() {
     var ids = [];
     var children = document.getElementById("div2").children; //get container element children.
     for (var i = 0, len = children.length; i < len; i++) {
         children[i].className = 'new-class'; //change child class name.
         ids.push(children[i].id); //get child id.
     }
-    if (ids[j] == "img2") {
-        MoveRight();
-    } else if (ids[j] == "img3") {
-        MoveLeft();
-    } else if (ids[j] == "img4") {
-        MoveUp();
-    } else if (ids[j] == "img5") {
-        MoveDown();
-    }
-    j++;
-    console.log("ta indo crl");
+        if (ids[j] == "img2") {
+                MoveRight();
+        } else if (ids[j] == "img3") {
+                MoveLeft();
+        } else if (ids[j] == "img4"){
+                MoveUp();
+        } else if(ids[j] == "img5"){
+                MoveDown();
+        }
+        j++;
+        console.log("ta indo crl")
 }
 
-function interno() {
-    j = 0;
-    v = setInterval(get(), 1000);
+function interno(){
     clearInterval(v);
+    j = 0;
+    v = setInterval(get, 800);
 }
 window.addEventListener('keydown', KeyDown, true);
 Iniciar();
-
