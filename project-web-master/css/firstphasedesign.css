@@ -1,0 +1,268 @@
+* {
+  margin: 0px auto;
+  padding: 0px;
+}
+
+body {
+  background-color: #5DBCD2;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@font-face {
+  font-family: 'FonteLogo';
+  src: url(../fonts/sunday.otf);
+}
+
+.logo:link {
+  text-decoration: none;
+  color: white;
+}
+
+.logo:active {
+  text-decoration: none;
+}
+
+.logo:visited {
+  text-decoration: none;
+  color: white;
+}
+
+#main {
+  position: absolute;
+  margin-top: 100px;
+  width: 100%;
+  height: 525px;
+}
+
+.menu {
+  position: relative;
+  left: 90px;
+}
+
+canvas {
+  position: relative;
+  margin-top: 0px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+p {
+  font-family: 'FonteLogo', sans-serif;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+}
+
+/*div das setas*/
+
+#div1 {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  width: 250px;
+  height: 150px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*div que recebe as setas*/
+
+#div2 {
+  position: relative;
+  display: block;
+  width: 800px;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url(../imagens/12.png);
+}
+
+/* estrela*/
+
+#get {
+  position: absolute;
+  margin-top: 395px;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* header */
+
+.cabecalho {
+  position: relative;
+  width: 100%;
+  height: 80px;
+  float: left;
+  background-color: rgb(21, 177, 212);
+  margin: 0 auto;
+}
+
+/* logo the code */
+
+.logo {
+  position: relative;
+  width: 242px;
+  height: 58px;
+  margin-top: 6px;
+  float: left;
+  left: 30px;
+  right: 0;
+  font-family: 'FonteLogo', sans-serif;
+  font-size: 40px;
+  color: white;
+}
+
+.menu-popup {
+  display: none;
+  position: absolute;
+  margin-top: 45px;
+  z-index: 9;
+  border-radius: 17px;
+  left: 0;
+  right: 0;
+}
+
+.menu-container {
+  max-width: 515px;
+  padding: 15px;
+  background-color: rgb(21, 177, 212);
+  border-radius: 15px;
+}
+
+.form-container .btn {
+  background-color: #5DBCD2;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+.form-container .tutorial {
+  background-color: red;
+}
+
+/* Formatação dos pop-ups */
+
+.open-button-log {
+  background-color: #5DBCD2;
+  color: white;
+  padding: 16px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  width: 120px;
+  transition: background-color .5s;
+}
+
+/* Efeito :hover no botão login */
+
+.open-button-log:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
+.open-button-cad {
+  background-color: #5DBCD2;
+  color: white;
+  padding: 16px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  right: 160px;
+  width: 120px;
+  transition: background-color .5s;
+}
+
+/* Efeito :hover no botão cadastro */
+
+.open-button-cad:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
+/* The popup form - hidden by default */
+
+.form-popup {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 30px;
+  border: 3px solid #5DBCD2;
+  z-index: 9;
+  border-radius: 17px;
+}
+
+/* Add styles to the form container */
+
+.form-container {
+  max-width: 300px;
+  padding: 15px;
+  background-color: rgb(190, 236, 240);
+  border-radius: 15px;
+}
+
+/* Full-width input fields */
+
+.form-container input[type=text], .form-container input[type=password] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+
+.form-container .btn {
+  background-color: #5DBCD2;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+
+label {
+  color: #5DBCD2;
+}
