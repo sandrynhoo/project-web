@@ -4,8 +4,8 @@ var myCanvas = document.documentElement;
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 var dx = 40;//a tava de variação (velocidade) horizontal do objeto
 var dy = 23;//a tava de variação (velocidade) vertical do objeto
-var dx1=36;
-var dy1=52;
+var dx1 = 36;
+var dy1 = 52;
 var x = 250;//posição horizontal do objeto (com valor inicial)
 var y = 92;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
@@ -13,6 +13,7 @@ var HEIGHT = 350;//altura da área retangular
 var fundoImg = new Image();
 var block = new Image();
 var aqua = new Image();
+var click = 0;
 var j;
 var v;
 block.src = '../imagens/17.png';
@@ -164,10 +165,12 @@ function closeForm() {
 function conf() {
     alert("Procedimento concluído com êxito.")
 }
-function openMenu() {
-    document.getElementById("myMenu").style.display = "block";
-}
-
-function closeMenu() {
-    document.getElementById("myForm").style.display = "none";
+document.getElementById("myMenu").onclick() = function(){menu()}
+function menu() {
+    click++;
+    if(click % 2 == 0){
+        document.getElementById("myMenu").style.display = "none";
+    }else{
+        document.getElementById("myMenu").style.display = "block";
+    }
 }

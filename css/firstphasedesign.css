@@ -133,12 +133,33 @@ p {
 }
 
 .menu-container {
-  max-width: 515px;
+  max-width: 500px;
   padding: 15px;
-  background-color: rgb(21, 177, 212);
+  background-color: #38b6ff;
   border-radius: 15px;
 }
-
+.menu-popup .menu-container p{
+  position: relative;
+  top: -70px;
+  font-size: 50px;
+}
+#imgdois{
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 350px;
+}
+#btnhome{
+  position: relative;
+  top: -30px;
+  bottom: 0;
+  left: 210px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: 'FonteLogo', sans-serif;
+  font-size: 30px;
+}
 .form-container .btn {
   background-color: #5DBCD2;
   color: white;
