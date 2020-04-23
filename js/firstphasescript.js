@@ -9,7 +9,7 @@ var dy1=52;
 var x = 250;//posição horizontal do objeto (com valor inicial)
 var y = 92;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
-var HEIGHT = 400;//altura da área retangular
+var HEIGHT = 350;//altura da área retangular
 var fundoImg = new Image();
 var block = new Image();
 var aqua = new Image();
@@ -163,4 +163,11 @@ function closeForm() {
 
 function conf() {
     alert("Procedimento concluído com êxito.")
+}
+function openMenu() {
+    document.getElementById("myMenu").style.display = "block";
+}
+
+function closeMenu() {
+    document.getElementById("myForm").style.display = "none";
 }
