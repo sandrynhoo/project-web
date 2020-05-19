@@ -165,7 +165,7 @@ function closeForm() {
 function conf() {
     alert("Procedimento concluído com êxito.")
 }
-document.getElementById("myMenu").onclick() = function(){menu()}
+document.getElementById("myMenu").onclick = function(){menu()}
 function menu() {
     click++;
     if(click % 2 == 0){
