@@ -141,7 +141,6 @@ function get() {
             MoveDown();
     }
         j++;
-        console.log("ta indo crl")
 }
 
 function interno(){

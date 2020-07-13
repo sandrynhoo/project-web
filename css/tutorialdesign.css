@@ -10,6 +10,7 @@
 body{
     background-color: #5DBCD2;  
     font-family: Arial, Helvetica, sans-serif;
+    color: white;
 }
 .logo:link {
     text-decoration: none;
@@ -33,10 +34,22 @@ body{
     background-color: rgb(21, 177, 212);
     margin: 0 auto;
 }
+#title{
+   font-family: 'FonteLogo';
+   color: white;
+   text-align: center;
+
+}
+#textright{
+  width: 500px;
+  height: 100px;
+  margin-left: 70px;
+  margin-top: 30px;
+}
 p{
-    font-family: 'FonteLogo', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
-    text-align: center;
+    font-size: 20px;
 }
 .logo {
     position: relative;
