@@ -35,15 +35,24 @@ body{
     margin: 0 auto;
 }
 #title{
-   font-family: 'FonteLogo';
+   font-family: 'Montserrat', sans-serif;
    color: white;
    text-align: center;
+   font-size: 50px;
+}
+section{
+  width: 794px;
+  height: 935px;
+}
+#img{
+  margin-left: 800px;
+  margin-top: 40px;
 }
 #textright{
   width: 500px;
   height: 100px;
-  margin-left: 70px;
-  margin-top: 30px;
+  margin-left: 0px;
+  margin-top: 40px;
 }
 #textleft{
   width: 500px;
@@ -58,9 +67,9 @@ body{
   margin-top: 160px;
 }
 p{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
 }
 .logo {
     position: relative;
