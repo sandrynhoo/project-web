@@ -125,7 +125,7 @@ p {
 .menu-popup {
   display: none;
   position: absolute;
-  margin-top: 45px;
+  margin-top: 18px;
   z-index: 9;
   border-radius: 17px;
   left: 0;
@@ -188,11 +188,34 @@ p {
 }
 
 /* Formatação dos pop-ups */
+.btnCad {
+  background-color: #5DBCD2;
+  color: white;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  position: absolute;
+  top: 15px;
+  right: 160px;
+  width: 120px;
+  transition: background-color .5s;
+  font-size: 12pt;
+  text-decoration: none;
+  font-family: 'FonteLogo', sans-serif;
+  text-align: center;
+}
 
+/* Efeito :hover no botão cadastro */
+.btnCad:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
 .open-button-log {
   background-color: #5DBCD2;
   color: white;
-  padding: 16px 20px;
+  padding: 10px;
   border: 1px solid #ffffff;
   border-radius: 8px;
   cursor: pointer;
@@ -202,6 +225,10 @@ p {
   right: 30px;
   width: 120px;
   transition: background-color .5s;
+  font-size: 12pt;
+  font-family: 'FonteLogo', sans-serif;
+  text-decoration: none;
+  text-align: center;
 }
 
 /* Efeito :hover no botão login */

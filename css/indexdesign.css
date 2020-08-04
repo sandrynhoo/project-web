@@ -101,28 +101,16 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
+    height: 20px;
     background-color: transparent;
     border: none;
     color: white;
     font-family: 'FonteLogo', sans-serif;
     font-size: 35px;
 }
-#btnimg{
-    position: absolute;
-    margin-top: 150px;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: transparent;
-    border: none;
-    color:white;
-    font-family: 'FonteLogo', sans-serif;
-    font-size: 35px;
-}
 #btnaqua{
     position: absolute;
-    margin-top: 25px;
+    margin-top: 70px;
     background-image: url("../imagens/2.png");
     top: 0;
     bottom: 0;
