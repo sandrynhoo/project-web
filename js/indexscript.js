@@ -7,5 +7,6 @@ function closeForm() {
 }
 
 function conf() {
-    alert("Procedimento concluído com êxito.")
+    alert("Procedimento concluído com êxito!")
+    window.location.replace("index.html");
 }

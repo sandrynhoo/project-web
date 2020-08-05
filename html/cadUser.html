@@ -4,14 +4,13 @@
     <meta charset="utf-8">
     <title>TheCode</title>
     <link rel="stylesheet" href="../css/caddesign.css">
-    <link rel="icon" type="imagem/png" href="../imagens/aqua.png" />
 </head>
 
 <body>
     <header class="cabecalho">
         <a href="index.html" title="TheCode" class="logo">THE CODE</a>
 
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form action="" name="cad" method="post" enctype="multipart/form-data">
         
         <h1>CADASTRO</h1>
 
@@ -23,6 +22,11 @@
         <div>
             <label for="">SENHA</label><br>
             <input name="senha" type="password" placeholder="Insira sua senha" required>
+        </div>
+
+        <div>
+            <label for=""> CONFIRMAR SENHA</label><br>
+            <input name="confsenha" type="password" placeholder="Confirme sua senha" required>
         </div>
 
         <div>
@@ -42,7 +46,7 @@
         </div>
 
         <div>
-            <button class="button" name="btn-conf" type="button" onclick="btconf()">CONFIRMAR</button>
+            <button class="button" value="valid" type="button" onclick="btvalida()">CONFIRMAR</button>
             <button class="button" name="btn-canc" type="button" onclick="btcanc()">CANCELAR</button>
         </div>
 
