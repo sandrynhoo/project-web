@@ -6,7 +6,7 @@ var dx = 40;//a tava de variação (velocidade) horizontal do objeto
 var dy = 23;//a tava de variação (velocidade) vertical do objeto
 var dx1 = 36;
 var dy1 = 52;
-var x = 250;//posição horizontal do objeto (com valor inicial)
+var x = 270;//posição horizontal do objeto (com valor inicial)
 var y = 92;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
 var HEIGHT = 350;//altura da área retangular
@@ -16,7 +16,6 @@ var aqua = new Image();
 var click = 0;
 var j;
 var v;
-block.src = '../imagens/17.png';
 aqua.src = '../imagens/aqua.png';
 function retornoX(j) {
     z = j;
@@ -25,9 +24,6 @@ function retornoX(j) {
 function retornoY(k) {
     u = k;
     return u;
-}
-function DesenharBlock() {
-    ctx.drawImage(block, retornoX(252), retornoY(120));
 }
 function Desenhar() {
     ctx.drawImage(aqua, x, y);
@@ -96,7 +92,6 @@ function MoveRight() {
 
 function Atualizar() {
     LimparTela();
-    DesenharBlock();
     Desenhar();
 }
 function Iniciar() {
