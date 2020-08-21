@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns: th="http://thymeleaf.org"
+>
+<head>
+<meta charset="UTF-8">
+<title>If you need sambary</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+</head>
+<body>
+<h1> Usuário </h1>
+<h3><a class="waves-effect waves-light btn-large" href="/mostra"><i class="material-icons left">arrow_back</i>List User</a></h3>
+<div th:each="usuario: ${usuario}" class="container">
+	<div class="row">
+		<p><span th:text="${usuario.nome}"></span></p>
+		<p><span th:text="${usuario.email}"></span></p>
+		<p><span th:text="${usuario.senha}"></span></p>
+		<p><span th:text="${usuario.numero}"></span></p>
+		<p><span th:text="${usuario.sexo}"></span></p>
+		
+		
+	</div>
+</div>
+
+
+
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+</body>
+</html>

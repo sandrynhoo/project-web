@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns: th="http://thymeleaf.org"
+>
+<head>
+    <meta charset="utf-8">
+    <title>TheCode</title>
+    <link rel="stylesheet" href="../css/caddesign.css">
+    <link rel="icon" type="imagem/png" href="../imagens/aqua.png" />
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="/" title="TheCode" class="logo">THE CODE</a>
+        <th:block th:include="html/MensagemValidacao" ></th:block>
+	
+    <form action="" name="cadastro" method="POST" enctype="multipart/form-data">
+        
+        <h1>CADASTRO</h1>
+
+        <div>
+            <label for="">NOME</label><br>
+            <input name="nome" type="text" placeholder="Ex: José Silva" required>
+        </div>
+
+        <div>
+            <label for="">SENHA</label><br>
+            <input id="password" name="senha" type="password" placeholder="Insira sua senha" required>
+        </div>
+			<div>
+				<label for="">CONFIRMA</label><br>
+				<input id="confirm_password" name="confSenha" type="password" placeholder="confirma senha" required>
+			</div>
+        <div>
+            <label for="">EMAIL</label><br>
+            <input name="email" type="email" placeholder="Ex: thecode2020@yahoo.com" size="30" required>
+        </div>
+
+        <div>
+            <label for="">NÚMERO</label><br>
+            <input name="numero" type="text" placeholder="Ex: 92 91234-5678" size="15" maxlength="11" required>
+        </div>
+
+        <div>
+            <p>Selecione seu sexo</p>
+            <label for="sexo1"><input name="sexo" id="sexo1" value="m" type="radio"> Masculino</label>
+            <label for="sexo2"><input name="sexo" id="sexo2" value="f" type="radio"> Feminino</label>
+        </div>
+
+        <div>
+            <button class="button" name="btn-conf" type="submit"  >CONFIRMAR</button>
+            <button class="button" name="btn-canc" type="button" onclick="btcanc()">CANCELAR</button>
+        </div>
+
+    </form>
+    <script type="text/javascript" src="../js/cadscript.js"></script>
+   
+</body>
+</html>

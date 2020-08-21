@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns: th="http://thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheCode</title>
+    <link rel="icon" type="imagem/png" href="imagens/aqua.png" />
+    <link rel="stylesheet" th:href="@{css/secondphasedesign.css}">
+</head>
+
+<body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <header class="cabecalho">
+        <a href="/" title="TheCode" class="logo">THE CODE</a>
+        <a href="/cadastro" class="btnCad">CADASTRO</a>
+        <a href="/login" class="btnLog">LOGIN</a>
+    </header>
+    <section id="main">
+        <input type="image" src="imagens/27.png" width="70" height="70" alt="Submit" class="menu"
+        id="btnpause"onclick="pause()">
+         <div class="pause-popup" id="myPause">
+            <form action "/" class="pause-container">
+                <p>Pause</p>
+                <img src="imagens/27.png" id="imgpause">
+            </form>
+        </div>
+        <h1></h1>
+        <h2>Compilador</h2>
+        <input type="image" src="imagens/19.png" alt="Submit" width="135" height="41" class="menu"
+          id="btnmenu" onclick="menu()">
+        <div class="menu-popup" id="myMenu">
+            <form action="/" class="menu-container">
+                <img src="imagens/23.png">
+                <img src="imagens/23.png" id="imgdois">
+                <p>Menu</p>
+                <button id="btnhome">Home</button>
+            </form>
+            <form action="html/tutorial.html">
+                <button id="btntutorial">Tutorial</button>
+            </form>
+        </div>
+        <div class="gameover-popup" id="myGameover">
+            <form action ="/" class="gameover-container">
+                <p>Game Over</p>
+                <button id="btnhomego">Home</button>
+            </form>
+             <form action ="/fase">
+                <button id="btnrei">Reiniciar</button>
+            </form>
+        </div>
+        <div class="win-popup" id="myWin">
+            <form action ="/" class="win-container">
+                <img src="imagens/28.png">
+                <img src="imagens/28.png" id="medalha">
+                <p>Ganhou</p>
+                <button id="btnphase">Home</button>
+            </form>
+        </div>
+        <div>
+            <canvas id="canvas" width="800" height="350">
+        </div>
+        <textarea name="text" id="text"></textarea>
+        <div id="div2" class="thumbnail" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div class="thumbnail" id="div1" ondrop="drop2(event)" ondragover="allowDrop(event)">
+        
+            <img src="imagens/9.png" draggable="true" ondragstart="drag(event)" id="img2" width="50px" height="50px">
+            <img src="imagens/13.png" draggable="true" ondragstart="drag(event)" id="img3" width="50px"
+                height="50px">
+            <img src="imagens/15.png" draggable="true" ondragstart="drag(event)" id="img4" width="50px"
+                height="50px">
+            <img src="imagens/16.png" draggable="true" ondragstart="drag(event)" id="img5" width="50px"
+                height="50px">
+        </div>
+        <div>
+            <input type="image" src="imagens/14.png" alt="Submit" width="50" height="50" id="get"
+                onclick="interno()">
+        </div>
+ 
+    </section>
+    <script type="text/javascript" src="js/secondphasescript.js"></script>
+   
+</body>
+
+</html>
