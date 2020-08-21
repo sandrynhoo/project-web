@@ -18,9 +18,17 @@ var clic = 0;
 var moves = 3;
 var j;
 var v;
+var textarea = document.querySelector('textarea');
+var padrão = ' #include <stdio.h>'
+var inicio = '\n\n void main(){'
+var fim = '}'
+textarea.value = padrão;
+textarea.value += inicio;
+textarea.disabled = true;
 block.src = '../imagens/17.png';
 aqua.src = '../imagens/aqua.png';
 fundoImg.src = '../imagens/11.png';
+
 function retornoX(j) {
     z = j;
     return z;
@@ -168,19 +176,15 @@ Iniciar();
 
 
 /* abrir e fechar pop-up */
-
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
-
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
-
 function conf() {
     alert("Procedimento concluído com êxito.")
 }
-
 $('h1').empty().append("chances: " + moves);
 document.getElementById("get").onclick = function(){move()}
 function move() {

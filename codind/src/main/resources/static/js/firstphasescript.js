@@ -18,6 +18,13 @@ var clic = 0;
 var moves = 2;
 var j;
 var v;
+var textarea = document.querySelector('textarea');
+var padrão = ' #include <stdio.h>'
+var inicio = '\n\n void main(){'
+var fim = '}'
+textarea.value = padrão;
+textarea.value += inicio;
+textarea.disabled = true;
 block.src = '../imagens/30.png';
 aqua.src = '../imagens/aqua.png';
 fundoImg.src = '../imagens/11.png';

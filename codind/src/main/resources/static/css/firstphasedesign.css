@@ -1,18 +1,18 @@
 * {
   margin: 0px auto;
   padding: 0px;
+  outline: none;
 }
 
 body {
   background-image: url(../imagens/29.png);
   font-family: Arial, Helvetica, sans-serif;
 }
-button {
-  border:none!important;
-}
-button:focus{
+
+button:focus {
   outline-style: none;
 }
+
 @font-face {
   font-family: 'FonteLogo';
   src: url(../fonts/sunday.otf);
@@ -43,6 +43,7 @@ button:focus{
   position: relative;
   left: 90px;
 }
+
 .win-popup {
   display: none;
   position: absolute;
@@ -52,6 +53,7 @@ button:focus{
   left: 0;
   right: 0;
 }
+
 .win-container {
   max-width: 800px;
   height: 420px;
@@ -59,28 +61,46 @@ button:focus{
   background-color: #38b6ff;
   border-radius: 15px;
 }
-.win-popup .win-container p{
+
+.win-popup .win-container p {
   position: relative;
   top: -150px;
   font-size: 50px;
 }
-#btnphase{
+
+#btnphase {
   position: relative;
   top: 10px;
   bottom: 0;
-  left: 310px;
-  background-color: transparent;
+  left: 280px;
   border: none;
   color: white;
   font-family: 'FonteLogo', sans-serif;
   font-size: 30px;
+  background-color: #5DBCD2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  width: 250px;
+  height: 70px;
+  transition: background-color .5s;
+  text-decoration: none;
+  text-align: center;
 }
-#medalha{
+
+#btnphase:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
+#medalha {
   position: relative;
   top: 0;
   bottom: 0;
   left: 570px;
 }
+
 .gameover-popup {
   display: none;
   position: absolute;
@@ -90,6 +110,7 @@ button:focus{
   left: 0;
   right: 0;
 }
+
 .gameover-container {
   max-width: 800px;
   height: 420px;
@@ -97,12 +118,14 @@ button:focus{
   background-color: #38b6ff;
   border-radius: 15px;
 }
-.gameover-popup .gameover-container p{
+
+.gameover-popup .gameover-container p {
   position: relative;
   top: -10px;
   font-size: 50px;
 }
-#btnhomego{
+
+#btnhomego {
   position: relative;
   top: 10px;
   bottom: 0;
@@ -112,18 +135,50 @@ button:focus{
   color: white;
   font-family: 'FonteLogo', sans-serif;
   font-size: 30px;
+  background-color: #5DBCD2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  width: 120px;
+  height: 70px;
+  transition: background-color .5s;
+  text-decoration: none;
+  text-align: center;
 }
-#btnrei{
-    position: relative;
-    top: -210px;
-    bottom: 0;
-    left: 600px;
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-family: 'FonteLogo', sans-serif;
-    font-size: 30px;
+
+#btnhomego:hover {
+  color: #0289b3;
+  background-color: #ffffff;
 }
+
+#btnrei {
+  position: relative;
+  top: -210px;
+  bottom: 0;
+  left: 613px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: 'FonteLogo', sans-serif;
+  font-size: 30px;
+  background-color: #5DBCD2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  width: 150px;
+  height: 70px;
+  transition: background-color .5s;
+  text-decoration: none;
+  text-align: center;
+}
+
+#btnrei:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
 .pause-popup {
   display: none;
   position: absolute;
@@ -141,21 +196,40 @@ button:focus{
   background-color: #38b6ff;
   border-radius: 15px;
 }
-.pause-popup .pause-container p{
+
+.pause-popup .pause-container p {
   position: relative;
   top: -10px;
   font-size: 50px;
 }
-#btnpause{
+
+#btnpause {
   position: relative;
   left: 1100px;
+  background-color: #5DBCD2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+  transition: background-color .5s;
+  text-decoration: none;
+  text-align: center;
 }
-#imgpause{
+
+#btnpause:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
+#imgpause {
   position: relative;
   top: 0;
   bottom: 0;
   left: 180px;
 }
+
 canvas {
   position: relative;
   margin-top: 0px;
@@ -165,25 +239,29 @@ canvas {
   left: 0;
   right: 0;
 }
+
 p {
   font-family: 'FonteLogo', sans-serif;
   color: white;
   text-align: center;
   font-size: 15px;
 }
-h1{
+
+h1 {
   font-family: 'FonteLogo', sans-serif;
   color: white;
   text-align: center;
   font-size: 15px;
 }
-h2{
+
+h2 {
   font-family: 'FonteLogo', sans-serif;
   color: white;
   font-size: 15px;
   margin-top: -24px;
   margin-left: 90px;
 }
+
 /*div das setas*/
 
 #div1 {
@@ -265,43 +343,93 @@ h2{
   background-color: #38b6ff;
   border-radius: 15px;
 }
-.menu-popup .menu-container p{
+
+.menu-popup .menu-container p {
   position: relative;
   top: -70px;
   font-size: 50px;
 }
-#btnmenu{
+
+#btnmenu {
   position: absolute;
   top: 5px;
+  background-color: #5DBCD2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  width: 130px;
+  height: 40px;
+  transition: background-color .5s;
+  text-decoration: none;
+  text-align: center;
 }
-#imgdois{
+
+#btnmenu:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
+#imgdois {
   position: relative;
   top: 0;
   bottom: 0;
   left: 350px;
 }
-#btnhome{
+
+#btnhome {
   position: relative;
   top: -50px;
   bottom: 0;
-  left: 210px;
-  background-color: transparent;
+  left: 195px;
   border: none;
   color: white;
   font-family: 'FonteLogo', sans-serif;
   font-size: 30px;
+  background-color: #5DBCD2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  width: 120px;
+  height: 70px;
+  transition: background-color .5s;
+  text-decoration: none;
+  text-align: center;
 }
-#btntutorial{
+
+#btnhome:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
+#btntutorial {
   position: relative;
   bottom: 0;
-  top: -140px;
-  left: 610px;
-  background-color: transparent;
+  top: -110px;
+  left: 615px;
   border: none;
   color: white;
   font-family: 'FonteLogo', sans-serif;
   font-size: 30px;
+  background-color: #5DBCD2;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 1;
+  width: 150px;
+  height: 70px;
+  transition: background-color .5s;
+  text-decoration: none;
+  text-align: center;
 }
+
+#btntutorial:hover {
+  color: #0289b3;
+  background-color: #ffffff;
+}
+
+
 .form-container .btn {
   background-color: #5DBCD2;
   color: white;
@@ -316,6 +444,7 @@ h2{
 .form-container .tutorial {
   background-color: red;
 }
+
 .btnLog {
   background-color: #5DBCD2;
   color: white;
@@ -336,11 +465,14 @@ h2{
 }
 
 /* Efeito :hover no botão login */
+
 .btnLog:hover {
   color: #0289b3;
   background-color: #ffffff;
 }
+
 /* Formata��o dos pop-ups */
+
 .btnCad {
   background-color: #5DBCD2;
   color: white;
@@ -361,10 +493,12 @@ h2{
 }
 
 /* Efeito :hover no bot�o cadastro */
+
 .btnCad:hover {
   color: #0289b3;
   background-color: #ffffff;
 }
+
 .open-button-log {
   background-color: #5DBCD2;
   color: white;
@@ -469,6 +603,7 @@ h2{
 label {
   color: #5DBCD2;
 }
+
 textarea {
   position: absolute;
   width: 230px;
