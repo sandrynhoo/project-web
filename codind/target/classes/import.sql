@@ -1,0 +1,1 @@
+insert into usuario(id,email,senha,numero) values (123,burela,senha,456);

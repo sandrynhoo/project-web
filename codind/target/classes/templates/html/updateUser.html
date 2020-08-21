@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns: th="http://thymeleaf.org"
+>
+<head>
+    <meta charset="utf-8">
+    <title>TheCode</title>
+    <link rel="stylesheet" href="../css/caddesign.css">
+    <link rel="icon" type="imagem/png" href="../imagens/aqua.png" />
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="/" title="TheCode" class="logo">THE CODE</a>
+         <th:block th:include="html/MensagemUpdate" ></th:block>
+
+    <form action="" th:bject="${usuario}" th:each="usuario : ${usuario}" 
+    method="POST" enctype="multipart/form-data">
+        
+        <h1>Atualizar</h1>
+        <div>
+        	
+        	<input name="id" type="hidden" th:field="*{usuario.id}">
+        </div>
+        
+        <div>
+        	<input name="lastpass" type="hidden" id="lastpass" th:value="*{usuario.senha}">
+        </div>
+        
+        <div>
+        <label for="">VERIFICA</label><br>
+        	<input name="verify" type="password" id="verify" required>
+        </div>
+
+        <div>
+            <label for="">NOME</label><br>
+            <input name="nome" type="text" th:field="*{usuario.nome}" required>
+        </div>
+
+        <div>
+            <label for="">SENHA</label><br>
+            <input name="senha" id="password" type="password"  required>
+        </div>
+        <div>
+				<label for="">CONFIRMA</label><br>
+				<input id="confirm_password" name="confSenha" type="password" placeholder="confirma senha" required>
+			</div>
+
+        <div>
+            <label for="">EMAIL</label><br>
+            <input name="email" type="email" th:field="*{usuario.email}" size="30" required>
+        </div>
+
+        <div>
+            <label for="">NÚMERO</label><br>
+            <input name="numero" type="text" th:field="*{usuario.numero}" size="15" maxlength="11" required>
+        </div>
+
+        <div>
+            <p>Selecione seu sexo</p>
+            <label for="sexo1"><input name="sexo" id="sexo1" value="m" type="radio"> Masculino</label>
+            <label for="sexo2"><input name="sexo" id="sexo2" value="f" type="radio"> Feminino</label>
+        </div>
+
+        <div>
+            <button class="button" name="btn-conf" type="submit" >CONFIRMAR</button>
+            <button class="button" name="btn-canc" type="button" onclick="btcanc()">CANCELAR</button>
+        </div>
+
+    </form>
+    <script type="text/javascript" src="../js/updatescript.js"></script>
+  
+</body>
+</html>
