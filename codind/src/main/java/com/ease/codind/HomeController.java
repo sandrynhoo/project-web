@@ -1,8 +1,12 @@
 package com.ease.codind;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,20 +15,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.ease.model.Roles;
+
 import com.ease.model.Usuario;
 import com.ease.repository.CodindRepository;
+import com.ease.repository.RolesRepository;
+
 
 
 @Controller
+
 public class HomeController {
 		
 	@Autowired
 	private CodindRepository repo;
+	@Autowired
+	private RolesRepository repil;
+	private String pass;
+	
+	
+	
+	 
 
-	@RequestMapping("/")
+	@RequestMapping(value="/",method=RequestMethod.GET)
 	
 	public String Index() {
-		
+			
 		return "html/index";
 	}
 	
@@ -32,10 +48,6 @@ public class HomeController {
 	public String FirstPhase() {
 		
 		return "html/firstphase";
-	}
-	@RequestMapping("/fase2")
-	public String SecondPhase() {
-		return "html/secondphase";
 	}
 	@RequestMapping("/fim")
 	public String GameOver() {
@@ -45,9 +57,12 @@ public class HomeController {
 
 
 	@RequestMapping(value= "/cadastro",method=RequestMethod.GET)
-	public String CadUser() {
+	public ModelAndView CadUser() {
+		ModelAndView model = new ModelAndView("html/cadUser");
+		Iterable<Usuario> usuarios = repo.findAll();
+		model.addObject("usuarios", usuarios);
+		return model;
 		
-		return "html/cadUser";
 	}
 	@RequestMapping(value= "/cadastro",method=RequestMethod.POST)
 	public String CadUser(@Valid Usuario usuario,BindingResult result,RedirectAttributes atr ) {
@@ -56,29 +71,24 @@ public class HomeController {
 			return "redirect:/cadastro";
 		}
 		
+		
+		usuario.setDecrypt(usuario.getSenha());
+		pass=new BCryptPasswordEncoder().encode(usuario.getSenha());
+		usuario.setSenha(pass);
+		 usuario.setRoles(Arrays.asList(repil.findByRole("ROLE_USER")));
 		repo.save(usuario);
+		
+		
 		atr.addFlashAttribute("mensagem","Usuario salvo com sucesso!");
 		
 		return "redirect:/cadastro";
 	}
-		@RequestMapping(value= "/login",method=RequestMethod.GET)
-	public String LogUser() {
+	@RequestMapping("/fase2")
+	public String SecondPhase() {
 		
-		return "html/logUser";
+		return "html/secondphase";
 	}
-	@RequestMapping(value= "/login",method=RequestMethod.POST)
-	public String LogUser(@Valid Usuario usuario,BindingResult result,RedirectAttributes atr ) {
-		if(result.hasErrors()) {
-			atr.addFlashAttribute("mensagem","verifique os campos!");
-			return "redirect:/login";
-		}
-		
-		repo.save(usuario);
-		atr.addFlashAttribute("mensagem","Usuario salvo com sucesso!");
-		
-		return "redirect:/login";
-	}
-	@RequestMapping("/mostra")
+	@RequestMapping(value="/mostra",method=RequestMethod.GET)
 	public ModelAndView show() {
 		ModelAndView model = new ModelAndView("html/showUser");
 		Iterable<Usuario> usuarios = repo.findAll();
@@ -99,6 +109,18 @@ public class HomeController {
 		return model;
 		
 	}
+	@RequestMapping(value="/{id}",method=RequestMethod.POST)
+	 public String setaAdm(@Valid Usuario usuario,BindingResult result,RedirectAttributes atr) {
+		usuario.setDecrypt(usuario.getSenha());
+		pass=new BCryptPasswordEncoder().encode(usuario.getSenha());
+		usuario.setSenha(pass);
+		
+		usuario.setRoles(Arrays.asList(repil.findByRole("ROLE_ADMIN")));
+		
+		repo.save(usuario);
+		return "redirect:/mostra";
+	}
+	
 
 	@RequestMapping("/update/{id}")
 	public ModelAndView updateUser(@PathVariable("id") int id) {
@@ -114,8 +136,11 @@ public class HomeController {
 			atr.addFlashAttribute("mensagem","verifique os campos!");
 			return "redirect:/mostra";
 		}
-		
+		usuario.setDecrypt(usuario.getSenha());
+		pass=new BCryptPasswordEncoder().encode(usuario.getSenha());
+		usuario.setSenha(pass);
 		repo.save(usuario);
+		
 		atr.addFlashAttribute("mensagem","Usuario atualizado com sucesso!");
 		
 		

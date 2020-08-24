@@ -15,9 +15,8 @@ xmlns: th="http://thymeleaf.org"
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <header class="cabecalho">
         <a href="/" title="TheCode" class="logo">THE CODE</a>
-        <a href="/cadastro" class="btnCad">CADASTRO</a>
-        <a href="/login" class="btnLog">LOGIN</a>
     </header>
+    
     <section id="main">
         <input type="image" src="imagens/27.png" width="70" height="70" alt="Submit" class="menu"
         id="btnpause"onclick="pause()">
@@ -38,7 +37,7 @@ xmlns: th="http://thymeleaf.org"
                 <p>Menu</p>
                 <button id="btnhome">Home</button>
             </form>
-            <form action="/tutorial">
+            <form action="/tutoriallog">
                 <button id="btntutorial">Tutorial</button>
             </form>
         </div>
@@ -52,7 +51,7 @@ xmlns: th="http://thymeleaf.org"
             </form>
         </div>
         <div class="win-popup" id="myWin">
-            <form action ="/fase2" class="win-container">
+            <form action ="/fase2log" class="win-container">
                 <img src="imagens/28.png">
                 <img src="imagens/28.png" id="medalha">
                 <p>Ganhou</p>
