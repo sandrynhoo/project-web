@@ -6,7 +6,7 @@ xmlns: th="http://thymeleaf.org"
 <head>
     <meta charset="utf-8">
     <title>TheCode</title>
-    <link rel="stylesheet" href="../css/caddesign.css">
+    <link rel="stylesheet" href="../css/updatedesign.css">
     <link rel="icon" type="imagem/png" href="../imagens/aqua.png" />
 </head>
 
@@ -30,7 +30,7 @@ xmlns: th="http://thymeleaf.org"
         
         <div>
         <label for="">VERIFICA</label><br>
-        	<input name="verify" type="password" id="verify" required>
+        	<input name="verify" type="password" id="verify" placeholder="Senha atual" required>
         </div>
 
         <div>
@@ -40,12 +40,13 @@ xmlns: th="http://thymeleaf.org"
 
         <div>
             <label for="">SENHA</label><br>
-            <input name="senha" id="password" type="password"  required>
+            <input name="senha" id="password" type="password" placeholder="Insira a senha" required>
         </div>
+        
         <div>
-				<label for="">CONFIRMA</label><br>
-				<input id="confirm_password" name="confSenha" type="password" placeholder="confirma senha" required>
-			</div>
+			<label for="">CONFIRMA</label><br>
+			<input id="confirm_password" name="confSenha" type="password" placeholder="Confirme a senha" required>
+		</div>
 
         <div>
             <label for="">EMAIL</label><br>
@@ -64,7 +65,7 @@ xmlns: th="http://thymeleaf.org"
         </div>
 
         <div>
-            <button class="button" name="btn-conf" type="submit" >CONFIRMAR</button>
+            <button class="button" name="btn-conf" type="submit">CONFIRMAR</button>
             <button class="button" name="btn-canc" type="button" onclick="btcanc()">CANCELAR</button>
         </div>
 

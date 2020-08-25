@@ -8,7 +8,7 @@ xmlns: th="http://thymeleaf.org"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheCode</title>
     <link rel="icon" type="imagem/png" href="imagens/aqua.png" />
-    <link rel="stylesheet" th:href="@{css/secondphasedesign.css}">
+    <link rel="stylesheet" th:href="@{css/thirdphasedesign.css}">
 </head>
 
 <body>
@@ -47,16 +47,16 @@ xmlns: th="http://thymeleaf.org"
                 <p>Game Over</p>
                 <button id="btnhomego">Home</button>
             </form>
-             <form action ="/fase2">
+             <form action ="/fase">
                 <button id="btnrei">Reiniciar</button>
             </form>
         </div>
         <div class="win-popup" id="myWin">
-            <form action ="/fase3" class="win-container">
+            <form action ="/fase2" class="win-container">
                 <img src="imagens/28.png">
                 <img src="imagens/28.png" id="medalha">
                 <p>Ganhou</p>
-                <button id="btnphase">Terceira fase</button>
+                <button id="btnphase">Quarta Fase</button>
             </form>
         </div>
         <div>
@@ -65,14 +65,10 @@ xmlns: th="http://thymeleaf.org"
         <textarea name="text" id="text"></textarea>
         <div id="div2" class="thumbnail" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
         <div class="thumbnail" id="div1" ondrop="drop2(event)" ondragover="allowDrop(event)">
-        
             <img src="imagens/9.png" draggable="true" ondragstart="drag(event)" id="img2" width="50px" height="50px">
-            <img src="imagens/13.png" draggable="true" ondragstart="drag(event)" id="img3" width="50px"
-                height="50px">
-            <img src="imagens/15.png" draggable="true" ondragstart="drag(event)" id="img4" width="50px"
-                height="50px">
-            <img src="imagens/16.png" draggable="true" ondragstart="drag(event)" id="img5" width="50px"
-                height="50px">
+            <img src="imagens/13.png" draggable="true" ondragstart="drag(event)" id="img3" width="50px" height="50px">
+            <img src="imagens/15.png" draggable="true" ondragstart="drag(event)" id="img4" width="50px" height="50px">
+            <img src="imagens/16.png" draggable="true" ondragstart="drag(event)" id="img5" width="50px" height="50px">
         </div>
         <div>
             <input type="image" src="imagens/14.png" alt="Submit" width="50" height="50" id="get"
@@ -80,7 +76,7 @@ xmlns: th="http://thymeleaf.org"
         </div>
  
     </section>
-    <script type="text/javascript" src="js/secondphasescript.js"></script>
+    <script type="text/javascript" src="js/thirdphasescript.js"></script>
    
 </body>
 

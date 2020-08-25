@@ -7,25 +7,35 @@ xmlns: th="http://thymeleaf.org"
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TheCode</title>
-    <link rel="stylesheet" th:href="@{../css/indexdesign.css}">
+    <link rel="stylesheet" th:href="@{../css/indexLAdesign.css}">
     <link rel="icon" type="imagem/png" href="../imagens/aqua.png" />
 </head>
 <body>
     <header class="cabecalho">
         <a href="/" title="TheCode" class="logo">THE CODE</a>
-		<a href="/mostra" class="lista">LISTA</a>
-        <a href="/cadastro" class="btnCad">CADASTRO</a>
-        <a href="/login" class="btnLog">LOGIN</a>
+        
+        <a href="/mostra" class="lista">LISTA</a>
+        
+        <nav class="menu-dp">
+        	<ul>
+        		<li><a href="">Ola, usuario<i class="fa fa-chevron-down"></i></a>
+        			<ul>
+        				<li><a href="/">Home</a></li>
+        				<li><a href="/cadastro">Cadastro</a></li>
+        			</ul>
+        		</li>
+        	</ul>
+        </nav>
+		
     </header>
+        
     <main>
         <div id="conteiner">
-            <img src="../imagens/loginho.gif" id="logo">
-            <a href="/fase" ><button id="btnplay">The Code</button></a>
+            <a href="/fase" ><button id="btnplay">PLAY</button></a>
             <a id="btnaqua" href="/fase"></a>
             <a ></a>
         </div>
     </main>
-    <script type="text/javascript" src="../js/indexscript.js"></script>
     
 </body>
 

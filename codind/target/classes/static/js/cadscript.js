@@ -4,10 +4,7 @@ function btcanc() {
 }
 
 function btconf() {
-	
-    
-    window.location.replace("/cadastro");
-	
+    window.location.replace("/indLogUser");
 }
 var password = document.getElementById("password")
 , confirm_password = document.getElementById("confirm_password");

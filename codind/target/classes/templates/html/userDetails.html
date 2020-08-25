@@ -17,20 +17,75 @@ xmlns: th="http://thymeleaf.org"
 <body>
 <h1> Usuário </h1>
 <h3><a class="waves-effect waves-light btn-large" href="/mostra"><i class="material-icons left">arrow_back</i>List User</a></h3>
-<div th:each="usuario: ${usuario}" class="container">
+<div th:each="usuario: ${usuario}"  class="container">
 	<div class="row">
-		<p><span th:text="${usuario.nome}"></span></p>
-		<p><span th:text="${usuario.email}"></span></p>
-		<p><span th:text="${usuario.senha}"></span></p>
-		<p><span th:text="${usuario.numero}"></span></p>
-		<p><span th:text="${usuario.sexo}"></span></p>
-		
-		
+		<p>nome: <span th:text="${usuario.nome}"></span></p>
+		<p>email: <span th:text="${usuario.email}"></span></p>
+		<p>numero:<span th:text="${usuario.numero}"></span></p>
+		<p>sexo: <span th:text="${usuario.sexo}"></span></p>
+		<p>senha:<span th:text="${usuario.decrypt}"></span> </p>
 	</div>
 </div>
+	<form action="" th:bject="${usuario}"  
+    method="POST" enctype="multipart/form-data">
+        
+        <div>	
+        	<input name="id" type="hidden" th:field="*{usuario.id}">
+        </div>
+        
+        <div>
+            
+            <input name="nome" type="hidden" th:field="*{usuario.nome}" required>
+        </div>
 
+        <div>
+          
+            <input name="senha" id="password" type="hidden" th:value="*{usuario.decrypt}"  required>
+        </div>
+
+        <div>
+        
+            <input name="email" type="hidden" th:field="*{usuario.email}" size="30" required>
+        </div>
+
+        <div>
+            
+            <input name="numero" type="hidden" th:field="*{usuario.numero}" size="15" maxlength="11" required>
+        </div>
+
+        <div>
+           
+            <input name="sexo" id="sexo" th:value="*{usuario.sexo}" type="hidden"> 
+             
+        </div>
+        	 <div>
+    <label>
+    	<input name="adm" type="checkbox" class="filled-in" id="disable"  onchange="handle(event)">
+    	<span>tornar o usuário adm?</span>
+    </label>
+    	
+    </div>
+
+        <div>
+            <button id="bota" class="button" name="btn-conf" type="submit" disabled>CONFIRMAR</button>
+        </div>
+
+    </form>
+   
+    
 
 
 <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+ <script>
+ function handle(event){
+     if(document.getElementById("disable").checked==true){
+         document.getElementById("bota").disabled= false;
+     }               
+     else{
+         document.getElementById("bota").disabled= true;
+     }
+ }
+        </script>
+   
 </body>
 </html>

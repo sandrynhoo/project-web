@@ -4,10 +4,10 @@ var myCanvas = document.documentElement;
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 var dx = 40;//a tava de variação (velocidade) horizontal do objeto
 var dy = 23;//a tava de variação (velocidade) vertical do objeto
-var dx1 = 36;
-var dy1 = 42;
-var x = 250;//posição horizontal do objeto (com valor inicial)
-var y = 92;//posição vertical do objeto (com valor inicial)
+var dx1 = 40;
+var dy1 = 30;
+var x = 302;//posição horizontal do objeto (com valor inicial)
+var y = 25;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
 var HEIGHT = 350;//altura da área retangular
 var fundoImg = new Image();
@@ -15,7 +15,7 @@ var block = new Image();
 var aqua = new Image();
 var click = 0;
 var clic = 0;
-var moves = 7;
+var moves = 10;
 var j;
 var v;
 var f = 0;
@@ -27,7 +27,7 @@ var inicio = '\n\n void main(){';
 var fim = '\n\n\n\n return 0;\n\n }';
 var code1 = retornoCodigo('\n printf("Hello World");');
 textarea.value = padrão;
-block.src = '../imagens/17.png';
+block.src = '../imagens/35.png';
 aqua.src = '../imagens/aqua.png';
 fundoImg.src = '../imagens/11.png';
 
@@ -40,7 +40,7 @@ function retornoY(k) {
     return u;
 }
 function DesenharBlock() {
-    ctx.drawImage(block, retornoX(252), retornoY(120));
+    ctx.drawImage(block, retornoX(270), retornoY(60));
 }
 function Desenhar() {
     ctx.drawImage(aqua, x, y);
@@ -220,7 +220,7 @@ function pause() {
     }
 }
 function win() {
-    if (x == 298 && y == 245) {
+    if (x == 262 && y == 214) {
         setTimeout(function () {
             return document.getElementById("myWin").style.display = "block";
         }, 1000);
