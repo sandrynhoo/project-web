@@ -15,16 +15,18 @@ var block = new Image();
 var aqua = new Image();
 var click = 0;
 var clic = 0;
-var moves = 3;
+var moves = 7;
 var j;
 var v;
+var f = 0;
+var q = 0;
+var g = 0;
 var textarea = document.querySelector('textarea');
-var padrão = ' #include <stdio.h>'
-var inicio = '\n\n void main(){'
-var fim = '}'
+var padrão = ' #include <stdio.h>';
+var inicio = '\n\n void main(){';
+var fim = '\n\n\n\n return 0;\n\n }';
+var code1 = retornoCodigo('\n printf("Hello World");');
 textarea.value = padrão;
-textarea.value += inicio;
-textarea.disabled = true;
 block.src = '../imagens/17.png';
 aqua.src = '../imagens/aqua.png';
 fundoImg.src = '../imagens/11.png';
@@ -102,7 +104,6 @@ function MoveRight() {
     if (x + dx < WIDTH) {
         x += dx;
         y += dy;
-        inserirVariaveis();
         inserirCodigo();
     }
 }
@@ -225,19 +226,23 @@ function win() {
         }, 1000);
     }
 }
-function inserirVariaveis() {
-    if(q == 0) {
-        var varaqua = '\n\n int aqua;';
-        textarea.value += varaqua;
-    }
-}
 function inserirCodigo() {
-    if (x == 290 && y == 115 && x + dx < WIDTH) {
-        textarea.value += test;
+    if (x == 290 && y == 115 && x + dx < WIDTH && f == 0) {
+        textarea.value += inicio;
+        f++;
     }
-    if (q == 0){
+    if (y == 138 && x == 330 && x + dx < WIDTH && q == 0){
+        textarea.value += code1;
+        q++;
+    }
+    if (x == 370 && y == 161 && x + dx < WIDTH && g == 0){
         textarea.value += fim;
+        g++;
     }
-    q++;
+
+}
+function retornoCodigo(codigo) {
+    var cod = codigo;
+    return cod;
 }
 textarea.disabled = true;
