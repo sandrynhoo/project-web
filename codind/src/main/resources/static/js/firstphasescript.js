@@ -99,7 +99,6 @@ function MoveDown() {
             y += dy1;
             x -= dx1;
             inserirCodigo();
-
         }
     }
 }
@@ -109,7 +108,6 @@ function MoveLeft() {
             x -= dx;
             y -= dy;
             inserirCodigo();
-
         }
     }
 }
@@ -119,7 +117,6 @@ function MoveRight() {
             x += dx;
             y += dy;
             inserirCodigo();
-
         }
     }
 }
@@ -158,7 +155,7 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 function get() {
-    if (p = true) {
+    if (p == true) {
         var ids = [];
         var children = document.getElementById("div2").children; //get container element children.
         for (var i = 0, len = children.length; i < len; i++) {
@@ -184,6 +181,7 @@ function get() {
     }
 }
 
+
 function interno() {
     if (p == true) {
         clearInterval(v);
@@ -208,10 +206,8 @@ function conf() {
 $('h1').empty().append("chances: " + moves);
 document.getElementById("get").onclick = function () { move() }
 function move() {
-    
-        moves--;
-        $('h1').empty().append("chances: " + moves);
-
+    moves--;
+    $('h1').empty().append("chances: " + moves);
     interno();
     if (moves < 0) {
         document.getElementById("myGameover").style.display = "block";
