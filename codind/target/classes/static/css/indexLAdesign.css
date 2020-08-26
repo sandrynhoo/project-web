@@ -2,10 +2,10 @@
     margin: 0px auto;
     padding: 0px;
     box-sizing: border-box;
-   	outline:none;
+    outline:none;
 }
 body{
-    background-image: url("../imagens/29.png");  
+    background-image: url("../imagens/29.png");    
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -93,17 +93,14 @@ p{
 	background-color: rgb(21, 177, 212);
 	font-family: 'FonteLogo', sans-serif;
 }
-
 .menu-dp ul{
 	list-style: none;
 	position: relative;
 }
-
 .menu-dp ul li{
 	width: 150px;
 	float: right;
 }
-
 .menu-dp a{
 	padding:20px;
 	display: block;
@@ -113,7 +110,6 @@ p{
 	color: white;
 	height: 80px;
 }
-
 .menu-dp ul ul{
 	position: absolute;
 	visibility: hidden;
@@ -140,6 +136,30 @@ p{
 
 /* Fim do menu dropdown */
 
+.lista{
+  background-color: #5DBCD2;
+    color: white;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    opacity: 1;
+    position: fixed;
+    top: 15px;
+    right: 290px;
+    width: 120px;
+    transition: background-color .5s;
+    font-size: 12pt;
+    text-decoration: none;
+    font-family: 'FonteLogo', sans-serif;
+    text-align: center;
+  
+  }
+  .lista:hover {
+    color: #0289b3;
+    background-color: #ffffff;
+  }
+
 #conteiner{
     position: absolute;
     margin-top: 125px;
@@ -147,8 +167,9 @@ p{
     bottom: 0;
     left: 0;
     right: 0;
-    width:  500px;
-    height: 500px;
+    width:  650px;
+    height: 450px;
+    background-color: orange;
     border-radius: 25px;
 }
 #btnplay{
@@ -176,7 +197,4 @@ p{
   color:#0d073d;
   background-color: #5DBCD2;
 }
-  
-  
-  
   

@@ -4,10 +4,10 @@ var myCanvas = document.documentElement;
 var ctx;//o "contexto" da canvas que será utilizado (2D ou 3D)
 var dx = 40;//a tava de variação (velocidade) horizontal do objeto
 var dy = 23;//a tava de variação (velocidade) vertical do objeto
-var dx1 = 36;
-var dy1 = 42;
-var x = 250;//posição horizontal do objeto (com valor inicial)
-var y = 92;//posição vertical do objeto (com valor inicial)
+var dx1 = 40;
+var dy1 = 26;
+var x = 234;//posição horizontal do objeto (com valor inicial)
+var y = 185;//posição vertical do objeto (com valor inicial)
 var WIDTH = 800;//largura da área retangular
 var HEIGHT = 350;//altura da área retangular
 var fundoImg = new Image();
@@ -15,23 +15,25 @@ var block = new Image();
 var aqua = new Image();
 var click = 0;
 var clic = 0;
-var moves = 5;
+var moves = 12;
+var p = true;
+var b = 0;
 var j;
 var v;
-var p = true;
 var f = 0;
 var q = 0;
 var g = 0;
-var b = false;
 var textarea = document.querySelector('textarea');
-var padrão = ' #include <stdio.h> \n// Isso é uma biblioteca, ela contêm funções pré-definidas, utilizadas nos programas';
-var inicio = '\n\n int main(){ \n// Função principal de seu programa';
-var fim = '\n\n return 0; \n// Finalização do programa\n\n }';
-var code1 = retornoCodigo('\n\n printf("Você Venceu"); \n// Função responsável pela saída de dados de seu programa');
+var padrão = ' #include <stdio.h>';
+var inicio = '\n\n void main(){';
+var fim = '\n\n return 0;\n}';
 textarea.value = padrão;
-block.src = '../imagens/30.png';
+textarea.value += inicio;
+textarea.value += retornoCodigo('\n\n int aqua; \n int blocos = 7;');
+block.src = '../imagens/34.png';
 aqua.src = '../imagens/aqua.png';
 fundoImg.src = '../imagens/11.png';
+
 function retornoX(j) {
     z = j;
     return z;
@@ -41,7 +43,7 @@ function retornoY(k) {
     return u;
 }
 function DesenharBlock() {
-    ctx.drawImage(block, retornoX(252), retornoY(120));
+    ctx.drawImage(block, retornoX(240), retornoY(80));
 }
 function Desenhar() {
     ctx.drawImage(aqua, x, y);
@@ -57,7 +59,6 @@ function LimparTela() {
     ctx.fill();
     ctx.stroke();
     fundo();
-
 }
 
 function KeyDown(evt) {
@@ -99,7 +100,6 @@ function MoveDown() {
             y += dy1;
             x -= dx1;
             inserirCodigo();
-
         }
     }
 }
@@ -109,7 +109,6 @@ function MoveLeft() {
             x -= dx;
             y -= dy;
             inserirCodigo();
-
         }
     }
 }
@@ -119,7 +118,6 @@ function MoveRight() {
             x += dx;
             y += dy;
             inserirCodigo();
-
         }
     }
 }
@@ -158,7 +156,7 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 function get() {
-    if (p = true) {
+    if (p == true) {
         var ids = [];
         var children = document.getElementById("div2").children; //get container element children.
         for (var i = 0, len = children.length; i < len; i++) {
@@ -184,6 +182,7 @@ function get() {
     }
 }
 
+
 function interno() {
     if (p == true) {
         clearInterval(v);
@@ -194,28 +193,26 @@ function interno() {
 window.addEventListener('keydown', KeyDown, true);
 Iniciar();
 
+function insereTexto() {
+    document.getElementById('divTeste').innerHTML = 'Teste inserindo texto.';
+}
 function openForm() {
     document.getElementById("myForm").style.display = "block";
 }
-
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
 }
-
 function conf() {
     alert("Procedimento concluído com êxito.")
 }
 $('h1').empty().append("chances: " + moves);
 document.getElementById("get").onclick = function () { move() }
 function move() {
-    
-        moves--;
-        $('h1').empty().append("chances: " + moves);
-
+    moves--;
+    $('h1').empty().append("chances: " + moves);
     interno();
     if (moves < 0) {
         document.getElementById("myGameover").style.display = "block";
-        $('h1').empty().append("chances: " + 0);
     } else {
         document.getElementById("myGameover").style.display = "none";
     }
@@ -235,31 +232,34 @@ function pause() {
     if (clic % 2 == 0) {
         document.getElementById("myPause").style.display = "none";
         p = true;
+
     } else {
         document.getElementById("myPause").style.display = "block";
         p = false;
     }
 }
 function win() {
-    if (x == 370 && y == 161) {
+    if (x == 474 && y == 176) {
         setTimeout(function () {
             return document.getElementById("myWin").style.display = "block";
         }, 1000);
     }
 }
 function inserirCodigo() {
-    if (x == 290 && y == 115 && x + dx < WIDTH && f == 0) {
-        textarea.value += inicio;
+    if (x == 274 && y == 110 && f == 0) {
+        textarea.value += retornoCodigo('\n for(aqua = 1; aqua <= blocos; aqua++) {\n');
         f++;
     }
-    if (y == 161 && x == 370 && x + dx < WIDTH && q == 0) {
-        textarea.value += code1;
+    if (y == 81 && x == 394 && q == 0) {
+        textarea.value += retornoCodigo('     if (aqua == blocos) {\n         print("Voce Venceu");\n     }\n }');
         q++;
     }
-    if (x == 370 && y == 161 && x + dx < WIDTH && g == 0) {
-        setTimeout(function () {
-            textarea.value += fim;
-        }, 1000);
+    if (x == 474 && y == 127 && b == 0){
+        textarea.value += retornoCodigo('\n// "For" é uma estrutura de repetição, muito popular e importante na programação. Nele os "contadores" são declarados dentro do "For", junto com a condição e a decrementação (--) ou incrementação (++)');
+        b++;
+    }
+    if (x == 474 && y == 176 && g == 0) {
+        textarea.value += fim;
         g++;
     }
 
@@ -269,3 +269,4 @@ function retornoCodigo(codigo) {
     return cod;
 }
 textarea.disabled = true;
+

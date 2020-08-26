@@ -18,15 +18,18 @@ var clic = 0;
 var moves = 10;
 var j;
 var v;
+var p = true;
 var f = 0;
 var q = 0;
 var g = 0;
+var b = 0;
 var textarea = document.querySelector('textarea');
 var padrão = ' #include <stdio.h>';
 var inicio = '\n\n void main(){';
-var fim = '\n\n\n\n return 0;\n\n }';
-var code1 = retornoCodigo('\n printf("Hello World");');
+var fim = '\n\n return 0;\n}';
 textarea.value = padrão;
+textarea.value += inicio;
+textarea.value += retornoCodigo('\n int aqua = 1; \n int blocos = 7;')
 block.src = '../imagens/35.png';
 aqua.src = '../imagens/aqua.png';
 fundoImg.src = '../imagens/11.png';
@@ -83,31 +86,41 @@ function KeyDown(evt) {
     }
 }
 function MoveUp() {
-    if (y - dy > 0) {
-        y -= dy1;
-        x += dx1;
+    if (p == true) {
+        if (y - dy > 0) {
+            y -= dy1;
+            x += dx1;
+            inserirCodigo();
+        }
     }
 }
 function MoveDown() {
-    if (y + dy < HEIGHT) {
-        y += dy1;
-        x -= dx1;
+    if (p == true) {
+        if (y + dy < HEIGHT) {
+            y += dy1;
+            x -= dx1;
+            inserirCodigo();
+        }
     }
 }
 function MoveLeft() {
-    if (x - dx > 0) {
-        x -= dx;
-        y -= dy;
+    if (p == true) {
+        if (x - dx > 0) {
+            x -= dx;
+            y -= dy;
+            inserirCodigo();
+        }
     }
 }
 function MoveRight() {
-    if (x + dx < WIDTH) {
-        x += dx;
-        y += dy;
-        inserirCodigo();
+    if (p == true) {
+        if (x + dx < WIDTH) {
+            x += dx;
+            y += dy;
+            inserirCodigo();
+        }
     }
 }
-
 function Atualizar() {
     LimparTela();
     fundo();
@@ -143,36 +156,39 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 function get() {
-    var ids = [];
-    var children = document.getElementById("div2").children; //get container element children.
-    for (var i = 0, len = children.length; i < len; i++) {
-        children[i].className = 'new-class'; //change child class name.
-        ids.push(children[i].id); //get child id.
+    if (p == true) {
+        var ids = [];
+        var children = document.getElementById("div2").children; //get container element children.
+        for (var i = 0, len = children.length; i < len; i++) {
+            children[i].className = 'new-class'; //change child class name.
+            ids.push(children[i].id); //get child id.
+        }
+        if (ids[j] == "img2") {
+            MoveRight();
+        } else if (ids[j] == "img3") {
+            MoveLeft();
+        } else if (ids[j] == "img4") {
+            MoveUp();
+        } else if (ids[j] == "img5") {
+            MoveDown();
+        } else if (ids[j] == "img6") {
+            MoveRight();
+        } else if (ids[j] == "img7") {
+            MoveRight();
+        } else if (ids[j] == "img8") {
+            MoveDown();
+        }
+        j++;
     }
-    if (ids[j] == "img2") {
-        MoveRight();
-    } else if (ids[j] == "img3") {
-        MoveLeft();
-    } else if (ids[j] == "img4") {
-        MoveUp();
-    } else if (ids[j] == "img5") {
-        MoveDown();
-    } else if (ids[j] == "img6") {
-        MoveRight();
-    } else if (ids[j] == "img7") {
-        MoveRight();
-    } else if (ids[j] == "img8") {
-        MoveDown();
-    }
-    j++;
 }
 
 
 function interno() {
-    clearInterval(v);
-    j = 0;
-    v = setInterval(get, 800);
-
+    if (p == true) {
+        clearInterval(v);
+        j = 0;
+        v = setInterval(get, 800);
+    }
 }
 window.addEventListener('keydown', KeyDown, true);
 Iniciar();
@@ -192,11 +208,14 @@ function conf() {
 $('h1').empty().append("chances: " + moves);
 document.getElementById("get").onclick = function () { move() }
 function move() {
-    $('h1').empty().append("chances: " + moves);
+
     moves--;
+    $('h1').empty().append("chances: " + moves);
+
     interno();
     if (moves < 0) {
         document.getElementById("myGameover").style.display = "block";
+        $('h1').empty().append("chances: " + 0);
     } else {
         document.getElementById("myGameover").style.display = "none";
     }
@@ -215,8 +234,11 @@ function pause() {
     clic++;
     if (clic % 2 == 0) {
         document.getElementById("myPause").style.display = "none";
+        p = true;
+
     } else {
         document.getElementById("myPause").style.display = "block";
+        p = false;
     }
 }
 function win() {
@@ -227,15 +249,19 @@ function win() {
     }
 }
 function inserirCodigo() {
-    if (x == 290 && y == 115 && x + dx < WIDTH && f == 0) {
-        textarea.value += inicio;
+    if (x == 302 && y == 78 && f == 0) {
+        textarea.value += retornoCodigo('\n while(aqua <= blocos) {\n');
         f++;
     }
-    if (y == 138 && x == 330 && x + dx < WIDTH && q == 0){
-        textarea.value += code1;
+    if (y == 131 && x == 302 && q == 0) {
+        textarea.value += retornoCodigo('     if (aqua == blocos) {\n         print("Voce Venceu");\n     }\n aqua++;\n }');
         q++;
     }
-    if (x == 370 && y == 161 && x + dx < WIDTH && g == 0){
+    if (x == 302 && y == 184 && b == 0){
+        textarea.value += retornoCodigo('\n// "While" é uma estrutura de repetição. Em português significa enquanto, portanto enquanto "aqua" é menor ou igual ao número de "blocos", número de "aqua" só aumenta, por causa da incrementação "aqua++."');
+        b++;
+    }
+    if (x == 262 && y == 214 && g == 0) {
         textarea.value += fim;
         g++;
     }
