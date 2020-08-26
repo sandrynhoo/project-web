@@ -2,6 +2,8 @@
 <html
 xmlns="http://www.w3.org/1999/xhtml"
 xmlns: th="http://thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+
 >
 <head>
     <meta charset="utf-8">
@@ -9,16 +11,55 @@ xmlns: th="http://thymeleaf.org"
     <title>TheCode</title>
     <link rel="stylesheet" th:href="@{../css/indexdesign.css}">
     <link rel="icon" type="imagem/png" href="../imagens/aqua.png" />
+   
+    
 </head>
-<body>
-    <header class="cabecalho">
+<body >
+
+    <header sec:authorize="isAnonymous()" class="cabecalho">
         <a href="/" title="TheCode" class="logo">THE CODE</a>
-		<a href="/mostra" class="lista">LISTA</a>
         <a href="/cadastro" class="btnCad">CADASTRO</a>
         <a href="/login" class="btnLog">LOGIN</a>
     </header>
+    
+    
+       <header sec:authorize="hasRole('ROLE_USER')" class="cabecalho">
+        <a href="/" title="TheCode" class="logo">THE CODE</a>
+        <div></div>
+        <nav   class="menu-dp">
+        	<ul>
+        		<li><a href="">Ola, <span sec:authentication="name"></span><i class="fa fa-chevron-down"></i></a>
+        		
+        			<ul>
+        				<li><a href="/">Home</a></li>
+        				<li><a href="/cadastro">Cadastro</a></li>
+        				<li><a href="/logout">Sair </a> </li>
+        			</ul>
+        		</li>
+        	</ul>
+        </nav>
+        
+		
+    </header>
+    <header sec:authorize="hasRole('ROLE_ADMIN')" class="cabecalho">
+        <a href="/" title="TheCode" class="logo">THE CODE</a>
+        
+        <nav  class="menu-dp">
+        	<ul>
+        		<li><a href="">Ola, Admin<i class="fa fa-chevron-down"></i></a>
+        			<ul>
+        				<li><a href="/">Home</a></li>
+        				<li><a href="/cadastro">Cadastro</a></li>
+        				<li> <a href="/mostra" >Lista</a> </li>
+        				<li><a href="/logout">Sair </a> </li>
+        			</ul>
+        		</li>
+        	</ul>
+        </nav>
+		
+    </header>
     <main>
-        <div id="conteiner">
+        <div  id="conteiner">
             <img src="../imagens/loginho.gif" id="logo">
             <a href="/fase" ><button id="btnplay">The Code</button></a>
             <a id="btnaqua" href="/fase"></a>

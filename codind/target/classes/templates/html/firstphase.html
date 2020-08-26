@@ -2,6 +2,7 @@
 <html
 xmlns="http://www.w3.org/1999/xhtml"
 xmlns: th="http://thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 >
 <head>
     <meta charset="UTF-8">
@@ -13,10 +14,15 @@ xmlns: th="http://thymeleaf.org"
 
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <header class="cabecalho">
+    
+    <header sec:authorize="isAnonymous()" class="cabecalho">
         <a href="/" title="TheCode" class="logo">THE CODE</a>
         <a href="/cadastro" class="btnCad">CADASTRO</a>
         <a href="/login" class="btnLog">LOGIN</a>
+    </header>
+    
+ <header sec:authorize="isAuthenticated()" class="cabecalho">
+        <a href="/" title="TheCode" class="logo">THE CODE</a>
     </header>
     <section id="main">
         <input type="image" src="imagens/27.png" width="70" height="70" alt="Submit" class="menu"

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html
+xmlns="http://www.w3.org/1999/xhtml"
+xmlns: th="http://thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+>
 <head>
     <meta charset="utf-8">
     <title>TheCode</title>
@@ -11,22 +15,27 @@
     <header class="cabecalho">
         <a href="/" title="TheCode" class="logo">THE CODE</a>
 	
-    <form action="" method="POST" enctype="multipart/form-data">
+    <form name="f" class="login" th:action="@{/login}" th:method="POST" enctype="multipart/form-data">
         
         <h1>LOGIN</h1>
         
         <div>
             <label for="">EMAIL</label><br>
-            <input name="email" type="email" placeholder="Ex: thecode@yahoo.com" size="30" required>
+            <input class="text-input" name="email" id="email"  type="email" placeholder="Ex: thecode@yahoo.com" size="30" required>
         </div>
 
         <div>
             <label for="">SENHA</label><br>
-            <input id="password" name="senha" type="password" placeholder="Insira sua senha" required>
+            <input class="text-input" id="senha"  name="senha" type="password" placeholder="Insira sua senha" required>
+            
         </div>
+         <div align="center" th:if="${param.error}">
+				<p style="font-size: 20; color: #FF1C19;">Email or Password invalid, please verify</p>
+			</div>
+       
 
         <div>
-            <button class="button" name="btn-conf" type="submit" onclick="btconf()">CONFIRMAR</button>
+            <button class="submit" name="btn-conf" type="submit" >CONFIRMAR</button>
             <button class="button" name="btn-canc" type="button" onclick="btcanc()">CANCELAR</button>
         </div>
 
