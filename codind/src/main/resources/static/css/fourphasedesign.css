@@ -296,8 +296,8 @@
     display: block;
     top: 0;
     bottom: 0;
-    left: 0;
     right: 0;
+    left: 250px;
   }
   
   /* header */
@@ -603,6 +603,7 @@
   label {
     color: #5DBCD2;
   }
+  
   textarea {
     position: absolute;
     width: 255px;

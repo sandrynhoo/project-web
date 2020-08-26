@@ -142,7 +142,7 @@ p{
     height: 100px;
 }
 
-/* Formata√ß√£o dos pop-ups */
+/* FormataÁ„o dos pop-ups */
 
   .btnLog {
     background-color: #5DBCD2;
@@ -163,7 +163,7 @@ p{
     text-align: center;
   }
   
-  /* Efeito :hover no bot√£o login */
+  /* Efeito :hover no bot„o login */
   .btnLog:hover {
     color: #0289b3;
     background-color: #ffffff;
@@ -211,7 +211,7 @@ p{
     text-align: center;
   }
   
-  /* Efeito :hover no bot√£o cadastro */
+  /* Efeito :hover no bot„o cadastro */
   .btnCad:hover {
     color: #0289b3;
     background-color: #ffffff;
@@ -262,6 +262,57 @@ p{
     margin-bottom:10px;
     opacity: 0.8;
   }
+  .menu-dp{
+	float: right;
+	width: 33%;
+	height: 50px;
+	background-color: rgb(21, 177, 212);
+	font-family: 'FonteLogo', sans-serif;
+}
+
+.menu-dp ul{
+	list-style: none;
+	position: relative;
+}
+
+.menu-dp ul li{
+	width: 150px;
+	float: right;
+}
+
+.menu-dp a{
+	padding:20px;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	background-color: rgb(21, 177, 212);
+	color: white;
+	height: 80px;
+}
+
+.menu-dp ul ul{
+	position: absolute;
+	visibility: hidden;
+}
+
+.menu-dp ul li:hover ul{
+	visibility: visible;
+}
+
+.menu-dp a:hover{
+	background-color: #f4f4f4;
+	color: #555;
+}
+
+.menu-dp ul ul li{
+	float: none;
+	border-bottom: solid 1px #ccc;
+}
+
+.menu-dp ul ul li a{
+	height: 50px;
+	padding: 15px;
+}
   
   /* Add a red background color to the cancel button */
   .form-container .cancel {

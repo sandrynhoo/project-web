@@ -13,17 +13,22 @@ xmlns: th="http://thymeleaf.org"
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
+    
+    <style>
+    	body{color: white; background-color: #5DBCD2;}
+    	span{color: white;}
+    </style>
 </head>
 <body>
 <h1> Usuário </h1>
-<h3><a class="waves-effect waves-light btn-large" href="/mostra"><i class="material-icons left">arrow_back</i>List User</a></h3>
+<h3><a class="waves-effect waves-light btn-large blue darken-4" href="/mostra"><i class="material-icons left">arrow_back</i>List User</a></h3>
 <div th:each="usuario: ${usuario}"  class="container">
 	<div class="row">
-		<p>nome: <span th:text="${usuario.nome}"></span></p>
-		<p>email: <span th:text="${usuario.email}"></span></p>
-		<p>numero:<span th:text="${usuario.numero}"></span></p>
-		<p>sexo: <span th:text="${usuario.sexo}"></span></p>
-		<p>senha:<span th:text="${usuario.decrypt}"></span> </p>
+		<p>NOME:	<span th:text="${usuario.nome}"></span></p>
+		<p>EMAIL:	<span th:text="${usuario.email}"></span></p>
+		<p>NÚMERO:	<span th:text="${usuario.numero}"></span></p>
+		<p>SEXO:	<span th:text="${usuario.sexo}"></span></p>
+		<p>SENHA:	<span th:text="${usuario.decrypt}"></span> </p>
 	</div>
 </div>
 	<form action="" th:bject="${usuario}"  
@@ -60,14 +65,14 @@ xmlns: th="http://thymeleaf.org"
         </div>
         	 <div>
     <label>
-    	<input name="adm" type="checkbox" class="filled-in" id="disable"  onchange="handle(event)">
-    	<span>tornar o usuário adm?</span>
+    	<input name="adm" type="checkbox" class="filled-in white" id="disable"  onchange="handle(event)">
+    	<span>Tornar o usuário um administrador?</span>
     </label>
     	
     </div>
 
         <div>
-            <button id="bota" class="button" name="btn-conf" type="submit" disabled>CONFIRMAR</button>
+            <button id="bota" class="button blue" name="btn-conf" type="submit" disabled>CONFIRMAR</button>
         </div>
 
     </form>

@@ -112,7 +112,7 @@ button:focus {
 }
 
 .gameover-container {
-  max-width: 800px;
+  max-width: 780px;
   height: 420px;
   padding: 15px;
   background-color: #38b6ff;
@@ -606,11 +606,11 @@ label {
 
 textarea {
   position: absolute;
-  width: 230px;
-  height: 400px;
+  width: 255px;
+  height: 450px;
   background-image: url(../imagens/3.png);
   color: white;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-top: -350px;
   resize: none;
   border-radius: 10px;
