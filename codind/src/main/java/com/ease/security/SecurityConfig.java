@@ -22,13 +22,26 @@ public class SecurityConfig extends  WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
 		http.csrf().disable().authorizeRequests()
-		.antMatchers( "/","/cadastro","/fase2","/fase").permitAll()
+		.antMatchers( "/","/cadastro","/fase2","/fase","/tutorial","/fase3","/fase4").permitAll()
 		.antMatchers( HttpMethod.GET,"/mostra","/{id}","/update/{id}","/deletar").hasRole("ADMIN")
 		.antMatchers( HttpMethod.POST,"/update/{id}","/deletar").hasRole("ADMIN")
 		.anyRequest().authenticated()
-		.and().formLogin().permitAll()
-		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+		.and().formLogin()
+		.loginPage("/login")
+		.loginProcessingUrl("/login")
+		.defaultSuccessUrl("/")
+		.failureUrl("/login?error=true")
+		.usernameParameter("email")
+		.passwordParameter("senha")
+		.permitAll()
+		.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		.logoutSuccessUrl("/");
 		System.out.println("chamou");
+		
+	//	http.formLogin().loginPage("/log")
+	//	.loginProcessingUrl("/perform_login")
+	//	.defaultSuccessUrl("/",true)
+	//	.failureUrl("/log?error=true");
 	}
 	
 	@Override

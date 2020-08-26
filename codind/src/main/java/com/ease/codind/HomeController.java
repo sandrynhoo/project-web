@@ -6,6 +6,8 @@ import java.util.Collection;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -40,7 +42,7 @@ public class HomeController {
 	@RequestMapping(value="/",method=RequestMethod.GET)
 	
 	public String Index() {
-			
+		
 		return "html/index";
 	}
 	
@@ -49,12 +51,26 @@ public class HomeController {
 		
 		return "html/firstphase";
 	}
+	@RequestMapping("/fase3")
+	public String ThirdPhase() {
+		
+		return "html/thirdphase";
+	}
+	@RequestMapping("/fase4")
+	public String FourPhase() {
+		
+		return "html/fourphase";
+	}
 	@RequestMapping("/fim")
 	public String GameOver() {
 		
 		return "html/gameover";
 	}
-
+	@RequestMapping("/tutorial")
+	public String tutorial() {
+		
+		return "html/tutorial";
+	}
 
 	@RequestMapping(value= "/cadastro",method=RequestMethod.GET)
 	public ModelAndView CadUser() {
@@ -159,7 +175,10 @@ public class HomeController {
 		
 		return "redirect:/mostra";
 	}
-	
+	@RequestMapping("/login")
+	public String login() {
+		return "html/logUser";
+	}
 	
 	
 	
